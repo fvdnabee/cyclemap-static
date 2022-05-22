@@ -306,7 +306,7 @@ if (btnProv != null) {
 	btnProv.onclick = function(){
 		var beginDate = new Date(2022, 4, 7); // jan is month 0, dec is month 11
 		var endDate = new Date(2022, 4, 23); // jan is month 0, dec is month 11
-		var bounds = [ [3.981210010373801, 44.13436579362733], [5.36886047271357, 43.39750815959959] ]
+		var bounds = [ [3.981210010373801, 44.18436579362733], [5.36886047271357, 43.30750815959959] ]
 		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[7], layer_ids[8]];
 		var layerIdsToShow = [layer_ids[9]];
 
