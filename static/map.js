@@ -13,8 +13,8 @@ var tile_ids = [];
 
 var base_url = "https://227nqzmfaieax54j3dxd75l3fm0kmhgq.lambda-url.eu-west-1.on.aws"
 
-var rssv = document.getElementById('mymapscript').getAttribute('data-rssv');
-var rsev = document.getElementById('mymapscript').getAttribute('data-rsev');
+var rssv = "2017-07-01T00:00:00.000Z";
+var rsev = "2022-05-23T00:00:00.000Z";
 var max_width_height = 50; // 50 for zoomlevel < 6.5 and 100 for zl >= 6.5
 
 map.on('load', function () {
