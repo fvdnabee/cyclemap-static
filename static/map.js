@@ -21,10 +21,9 @@ map.on('load', function () {
 	ready = true;
 
 	// Show cycling tracks on map
-	layer_colors = ["#0000ff", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#00ffff", "#ffff00"]
+	layer_colors = ["#0000ff", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#00ffff", "#ffff00", "#800080"]
 	layer_ids = ["santiago-track", "silkroad-0-track", "silkroad-1-track", "silkroad-2-track", "silkroad-3-track", "silkroad-4-track", "benede-track", "limburg-track", "swiss-track"]
-	// TODO: create mapbox layer with swiss tracks
-	tile_ids = ["fvdnabee.5dbhhek7", "fvdnabee.cwn75xfz", "fvdnabee.8uncf7n4", "fvdnabee.1o18xqpn", "fvdnabee.3k6un6tc", "fvdnabee.arcp8dgf", "fvdnabee.70itxk00", "fvdnabee.1icj8poo", "fvdnabee.1icj8poo"]
+	tile_ids = ["fvdnabee.5dbhhek7", "fvdnabee.cwn75xfz", "fvdnabee.8uncf7n4", "fvdnabee.1o18xqpn", "fvdnabee.3k6un6tc", "fvdnabee.arcp8dgf", "fvdnabee.70itxk00", "fvdnabee.1icj8poo", "fvdnabee.2bu2zz52"]
 	addTrackLayers();
 
 	initAjaxFilters()
@@ -241,7 +240,7 @@ if (btnSilkroad != null) {
 		var endDate = new Date(2018, 11, 30);
 		var bounds = [ [-4.507774877735272, 2.6602810808397237], [146.11767796084553, 61.04584048146046] ];
 		// show silkroad track layers, hide other layers:
-		var layerIdsToHide = [layer_ids[0], layer_ids[6], layer_ids[7]];
+		var layerIdsToHide = [layer_ids[0], layer_ids[6], layer_ids[7], layer_ids[8]];
 		var layerIdsToShow = [layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5]];
 
 		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
@@ -255,7 +254,7 @@ if (btnSantiago != null) {
 		var endDate = new Date(2017, 11, 31);
 		var bounds = [ [ -39.27630475468817, 26.781210313359125], [37.25033209346199, 54.85322398321597] ]
 		// show santiago track layer, hide other layers:
-		var layerIdsToHide = [layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[7]];
+		var layerIdsToHide = [layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[7], layer_ids[8]];
 		var layerIdsToShow = [layer_ids[0]];
 
 		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
@@ -268,7 +267,7 @@ if (btnBenede != null) {
 		var beginDate = new Date(2017, 6, 1);
 		var endDate = new Date(2017, 6, 31);
 		var bounds = [ [ 0.930541, 50.058336 ], [10.664480, 53.601601] ]
-		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[7]];
+		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[7], layer_ids[8]];
 		var layerIdsToShow = [layer_ids[6]];
 
 		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
@@ -282,7 +281,7 @@ if (btnLimburg != null) {
 		var endDate = new Date(2021, 4, 31);
 		var bounds = [ [3.30431091757914, 50.625855941053255], [6.741750996328203, 51.42902384992439] ]
 		// show limburg track layer, hide other layers:
-		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6]];
+		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[8]];
 		var layerIdsToShow = [layer_ids[7]];
 
 		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
@@ -292,11 +291,9 @@ if (btnLimburg != null) {
 var btnSwiss = document.getElementById("btn-swiss");
 if (btnSwiss != null) {
 	btnSwiss.onclick = function(){
-		var beginDate = new Date(2021, 09, 01);
-		var endDate = new Date(2021, 09, 30);
-
-		var bounds = [ [5.798858253677991, 46.1077219159995] [10.3663090452535, 47.9275406797851] ]
-		// show Swiss track layer, hide other layers:
+		var beginDate = new Date(2021, 8, 1); // jan is month 0, dec is month 11
+		var endDate = new Date(2021, 8, 19); // jan is month 0, dec is month 11
+		var bounds = [ [5.798858253677991, 46.1077219159995], [10.3663090452535, 47.9275406797851] ]
 		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[7]];
 		var layerIdsToShow = [layer_ids[8]];
 
