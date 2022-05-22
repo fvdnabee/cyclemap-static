@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Floris cycles - bicycle tours map</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <link rel="icon" type="image/png" href="static/favicon.png"/>
+
+  <!-- mapbox-gl-js -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+  <!-- DevExtreme -->
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.1.0.min.js"></script>
+  <!-- DevExtreme themes -->
+  <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.2.5/css/dx.light.css" />
+  <!-- DevExtreme library -->
+  <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/18.2.5/js/dx.all.js"></script>
+</head>
+<body>
+<div>
+  <div id='map'></div>
+  <script type="text/javascript">
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZnZkbmFiZWUiLCJhIjoiY2pzbjFqdHpvMDZzNTN5cWF0cmQzMWp3biJ9.zl-EkfsayaTbYcWYV0sPxw';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/fvdnabee/cjsn6pf1v05621fmgbkbxiob2',
+    center: [12.071354, 43.606002],
+    zoom: 4.5
+  });
+  </script>
+
+  <div id="date-filter" class='date-filter'><div id="range"></div> </div>
+
+  <button class='update-markers' id="btn-set-bounds">Set bounds</button>
+
+  <button class="openbtn" onclick="openNav()">☰ Tours</button>
+
+  <div id="sidebar" class="sidebar">
+    <div>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <button id="btn-benede">2017 BeNeDe tour</button><br />
+      <button id="btn-santiago">2017 Santiago tour</button><br />
+      <button id="btn-silkroad">2018 Silk road tour</button><br />
+      <button id="btn-limburg">2021 Limburg tour</button><br />
+      <button id="btn-swiss">2021 Switzerland tour</button><br />
+      <button id="btn-alltours">All tours</button><br />
+    </div>
+
+    <div class="sidebar-footer">
+      <a href="https://github.com/fvdnabee/cyclemap" title="Visit project on github"><svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a><br />
+      <a href="https://floriscycles.com" title="Visit homepage"><img src="static/logo.png" alt="floriscycles.com" /></a>
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="static/map.js" id="mymapscript" data-rssv="2017-07-01T00:00:00.000Z" data-rsev="2022-05-22T13:50:59.863Z"></script>
+
+</body>
+</html>

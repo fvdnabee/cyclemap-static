@@ -1,0 +1,98 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
+.date-filter {
+    position: fixed;
+    bottom: 30px;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 8000000;
+    opacity: 1;
+    background: white;
+    font: 20px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+.update-markers {
+    display: none;
+    position:fixed;
+    top: 20px;
+    right: 2%;
+    z-index: 9000000;
+    background: white;
+    font: 14px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    opacity: 1;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+.openbtn {
+    position: fixed;
+    z-index: 9000000;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: black;
+    margin: 22px 22px;
+    padding: 10px 15px;
+    border: none;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000000;
+    background: rgba(255,255,255,1.0);
+    overflow-x: hidden;
+    transition: 0.25s;
+    padding-top: 50px;
+    text-align: center;
+    display: flex;                   /* defines flexbox */
+    flex-direction: column;          /* top to bottom */
+    justify-content: space-between;  /* first item at start, last at end */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar button {
+    margin: 5px 15px;
+    text-align: center;
+    opacity: 1;
+    background: white;
+    font: 14px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,1.0);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.sidebar button, .sidebar img, .sidebar svg {
+    padding: 10px 10px;
+}
+
+.sidebar img {
+    width: 70%;
+}
+
+.sidebar-footer {
+    height: 200px;
+}
