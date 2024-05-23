@@ -14,16 +14,16 @@ var tile_ids = [];
 var base_url = "https://227nqzmfaieax54j3dxd75l3fm0kmhgq.lambda-url.eu-west-1.on.aws"
 
 var rssv = "2017-07-01T00:00:00.000Z";
-var rsev = "2022-05-23T00:00:00.000Z";
+var rsev = "2023-09-14T00:00:00.000Z";
 var max_width_height = 50; // 50 for zoomlevel < 6.5 and 100 for zl >= 6.5
 
 map.on('load', function () {
 	ready = true;
 
 	// Show cycling tracks on map
-	layer_colors = ["#0000ff", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#00ffff", "#ffff00", "#800080", "#ff00ff"]
-	layer_ids = ["santiago-track", "silkroad-0-track", "silkroad-1-track", "silkroad-2-track", "silkroad-3-track", "silkroad-4-track", "benede-track", "limburg-track", "swiss-track", "prov-track"]
-	tile_ids = ["fvdnabee.5dbhhek7", "fvdnabee.cwn75xfz", "fvdnabee.8uncf7n4", "fvdnabee.1o18xqpn", "fvdnabee.3k6un6tc", "fvdnabee.arcp8dgf", "fvdnabee.70itxk00", "fvdnabee.1icj8poo", "fvdnabee.2bu2zz52", "fvdnabee.57oj1dkv"]
+	layer_colors = ["#0000ff", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#00ffff", "#ffff00", "#800080", "#ff00ff", "#00ff00"]
+	layer_ids = ["santiago-track", "silkroad-0-track", "silkroad-1-track", "silkroad-2-track", "silkroad-3-track", "silkroad-4-track", "benede-track", "limburg-track", "swiss-track", "prov-track", "greenway-track"]
+	tile_ids = ["fvdnabee.5dbhhek7", "fvdnabee.cwn75xfz", "fvdnabee.8uncf7n4", "fvdnabee.1o18xqpn", "fvdnabee.3k6un6tc", "fvdnabee.arcp8dgf", "fvdnabee.70itxk00", "fvdnabee.1icj8poo", "fvdnabee.2bu2zz52", "fvdnabee.57oj1dkv", "fvdnabee.3se71lq5"]
 	addTrackLayers();
 
 	initAjaxFilters()
@@ -302,6 +302,18 @@ if (btnProv != null) {
 		var endDate = new Date(2022, 4, 23); // jan is month 0, dec is month 11
 		var bounds = [ [3.981210010373801, 44.18436579362733], [5.36886047271357, 43.30750815959959] ]
 		var layerIdsToShow = [layer_ids[9]];
+
+		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
+	};
+}
+
+var btnGreenway = document.getElementById("btn-greenway");
+if (btnGreenway != null) {
+	btnGreenway.onclick = function(){
+		var beginDate = new Date(2023, 8, 1); // jan is month 0, dec is month 11
+		var endDate = new Date(2023, 8, 23); // jan is month 0, dec is month 11
+		var bounds = [ [13.9424, 50.3333], [16.7023, 47.8668] ]
+		var layerIdsToShow = [layer_ids[10]];
 
 		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
 	};
