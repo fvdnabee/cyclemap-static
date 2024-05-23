@@ -239,11 +239,9 @@ if (btnSilkroad != null) {
 		var beginDate = new Date(2018, 01, 01);
 		var endDate = new Date(2018, 11, 30);
 		var bounds = [ [-4.507774877735272, 2.6602810808397237], [146.11767796084553, 61.04584048146046] ];
-		// show silkroad track layers, hide other layers:
-		var layerIdsToHide = [layer_ids[0], layer_ids[6], layer_ids[7], layer_ids[8], layer_ids[9]];
 		var layerIdsToShow = [layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5]];
 
-		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
+		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
 	};
 }
 
@@ -254,10 +252,9 @@ if (btnSantiago != null) {
 		var endDate = new Date(2017, 11, 31);
 		var bounds = [ [ -39.27630475468817, 26.781210313359125], [37.25033209346199, 54.85322398321597] ]
 		// show santiago track layer, hide other layers:
-		var layerIdsToHide = [layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[7], layer_ids[8], layer_ids[9]];
 		var layerIdsToShow = [layer_ids[0]];
 
-		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
+		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
 	};
 }
 
@@ -267,10 +264,9 @@ if (btnBenede != null) {
 		var beginDate = new Date(2017, 6, 1);
 		var endDate = new Date(2017, 6, 31);
 		var bounds = [ [ 0.930541, 50.058336 ], [10.664480, 53.601601] ]
-		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[7], layer_ids[8], layer_ids[9]];
 		var layerIdsToShow = [layer_ids[6]];
 
-		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
+		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
 	};
 }
 
@@ -281,10 +277,9 @@ if (btnLimburg != null) {
 		var endDate = new Date(2021, 4, 31);
 		var bounds = [ [3.30431091757914, 50.625855941053255], [6.741750996328203, 51.42902384992439] ]
 		// show limburg track layer, hide other layers:
-		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[8], layer_ids[9]];
 		var layerIdsToShow = [layer_ids[7]];
 
-		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
+		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
 	};
 }
 
@@ -294,10 +289,9 @@ if (btnSwiss != null) {
 		var beginDate = new Date(2021, 8, 1); // jan is month 0, dec is month 11
 		var endDate = new Date(2021, 8, 19); // jan is month 0, dec is month 11
 		var bounds = [ [5.798858253677991, 46.1077219159995], [10.3663090452535, 47.9275406797851] ]
-		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[7], layer_ids[9]];
 		var layerIdsToShow = [layer_ids[8]];
 
-		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
+		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
 	};
 }
 
@@ -307,14 +301,13 @@ if (btnProv != null) {
 		var beginDate = new Date(2022, 4, 7); // jan is month 0, dec is month 11
 		var endDate = new Date(2022, 4, 23); // jan is month 0, dec is month 11
 		var bounds = [ [3.981210010373801, 44.18436579362733], [5.36886047271357, 43.30750815959959] ]
-		var layerIdsToHide = [layer_ids[0], layer_ids[1], layer_ids[2], layer_ids[3], layer_ids[4], layer_ids[5], layer_ids[6], layer_ids[7], layer_ids[8]];
 		var layerIdsToShow = [layer_ids[9]];
 
-		tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow);
+		tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow);
 	};
 }
 
-function tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsToShow) {
+function tourButtonClicked(beginDate, endDate, bounds, layerIdsToShow) {
 		closeNav();
 
 		if (typeof rangeSelector != "undefined")  rangeSelector.setValue([beginDate, endDate]);
@@ -323,6 +316,7 @@ function tourButtonClicked(beginDate, endDate, bounds, layerIdsToHide, layerIdsT
 		map.fitBounds(bounds);
 		setBounds(bounds);
 
+		var layerIdsToHide = layer_ids.filter(function(value) { return !layerIdsToShow.includes(value); });
 		layerIdsToHide.forEach(function(id) { map.setLayoutProperty(id, 'visibility', 'none'); });
 		layerIdsToShow.forEach(function(id) { map.setLayoutProperty(id, 'visibility', 'visible'); });
 
