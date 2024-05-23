@@ -199,7 +199,7 @@ function draw_map_entries() {
 				//	'<img src="' + map_entry.media_attachments[0].url + '" style="max-width: 400px;" alt="Image not found" />' +
 				//	map_entry.content +
 				//	'<a href="' + map_entry.url + '" title="View all media on mastodon">' + map_entry.url + '</a>'))
-				.setHTML('<iframe src="' + map_entry.url + '/embed" class="mastodon-embed" style="max-width: 100%; max-height: 350px; border: 0" width="400" height="400" allowfullscreen="allowfullscreen"></iframe><script src="https://social.vdna.be/embed.js" async="async"></script>'))
+				.setHTML('<iframe src="' + map_entry.url + '/embed" class="mastodon-embed" style="max-width: 100%; max-height: 500px; border: 0" width="400" height="500" allowfullscreen="allowfullscreen"></iframe><script src="https://social.vdna.be/embed.js" async="async"></script>'))
 			.addTo(map);
 
 		markers.push(marker);
