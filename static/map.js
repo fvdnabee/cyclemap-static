@@ -11,7 +11,7 @@ var jsonResponse;
 var layer_ids = [];
 var tile_ids = [];
 
-var base_url = "https://227nqzmfaieax54j3dxd75l3fm0kmhgq.lambda-url.eu-west-1.on.aws"
+var base_url = "https://6rd6soxa622nvtcrub3gzqwp3e0wqyrs.lambda-url.eu-central-1.on.aws"
 
 var rssv = "2017-07-01T00:00:00.000Z";
 var rsev = "2023-09-14T00:00:00.000Z";
